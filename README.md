@@ -12,6 +12,7 @@ Open Remix and put these 5 files in the same folder
 Now deployment is done I have made this code according to senario of code inside Tapicaos contest
 here we will do a delegate-call two times to the same functions and with insufficient msg.value . 
 the first call will use all the msg.value and complete the execution just we have to check that 
+
 1)whether the msg.value stays persist inside delegate-call?
 2)after using that mag.value to do external calls inside delegat-call. second time does it all to do external call ?
 
