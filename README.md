@@ -41,17 +41,17 @@ false
 
 2) Next it does an external call to sendFrom() inside _withdrawToChain().  and sendFrom will receive all the ethers 
 
-3) Now it prints result of calling sendFrom.
+3) Now it prints the result of calling sendFrom.
 
-4) Now it prints result of calling delegatecall to withdraw(). here first transcation complets
+4) Now it prints the result of calling delegatecall to withdraw(). here first transaction completes
 
 5) now for the second iteration it again delegate-call to withdraw() function which internally calls _withdraw().
-   Inside _withdraw() first it prints value of msg.value = 1000000000000000000 . ***Which shows that value of msg.sender stays persist***
+   Inside _withdraw() first it prints the value of msg.value = 1000000000000000000. ***Which shows that the value of msg.sender stays persists***
 
 6) Now it does an external call to sendFrom() and fail because it doesn't have sufficient eth to do an external call and pass msg.value to sendFrom(). it only prints the result of delegate-call and doesn't print the result of sendFrom() because it failed.
-   ***Another catch over here is that inside _withdraw() there is the  mechanism to set gas value as address(this).balance if msg.value < 0 which is able to bypass because the value of msg.value was persisted***
+   ***Another catch over here is that inside _withdraw() there is a  mechanism to set gas value as address(this).balance if msg.value < 0 which is able to bypass because the value of msg.value was persisted***
 
 #Concution 
 
-This shows that the mechanisum which sends gas from cintract balance if msg.value is less than 0 will fail if this two functions were called by usong burst() function 
+This shows that the mechanism which sends gas from contract balance if msg.value is less than 0 will fail if these two functions were called by using burst() function 
 
