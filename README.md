@@ -9,7 +9,7 @@ Open Remix and put these 5 files in the same folder
                  2] address of SendFrom.sol
 
 # Execution
-Now deployment is done I have made this code according to senario of code inside Tapicaos contest
+Now deployment is done I have made this code according to scenario of code inside tapioca contest
 here we will do a delegate-call two times to the same functions and with insufficient msg.value . 
 the first call will use all the msg.value and complete the execution just we have to check that 
 
@@ -51,7 +51,7 @@ false
 6) Now it does an external call to sendFrom() and fail because it doesn't have sufficient eth to do an external call and pass msg.value to sendFrom(). it only prints the result of delegate-call and doesn't print the result of sendFrom() because it failed.
    ***Another catch over here is that inside _withdraw() there is a  mechanism to set gas value as address(this).balance if msg.value < 0 which is able to bypass because the value of msg.value was persisted***
 
-# Concution 
+# Conclution
 
 This shows that the mechanism which sends gas from contract balance if msg.value is less than 0 will fail if these two functions were called by using burst() function 
 
