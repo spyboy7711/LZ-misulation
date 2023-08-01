@@ -12,7 +12,7 @@ contract MagnetarV2 is Ballot{
 
     }
 
-    function executeModulesInBatch() external payable{
+    function burst() external payable{
         for (uint256 i = 0; i <2; i++) {
                 bytes memory callData = abi.encodeWithSignature("withdraw(address)", _add1);
                  _executeModule(payable(myContractInstance), callData);
