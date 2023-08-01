@@ -1,14 +1,14 @@
 # LZ-smisulation\
 Opne Remix and put this 5 files in same folder
 
-##Deployment
+#Deployment
 1) Deploy SendFrom.sol 
 2) Deploy MagnetarMarketModule.sol 
 3) Now to deploy MagnetarV2.sol give two input addresses accordingly 
         inputs : 1] address of MagnetarMarketModule
                  2] address of SendFrom.sol
 
-##Execution 
+#Execution 
 Now deployment is done I have made this code according senario of code inside tapicaos cpntest
 here we will do deleagatecall two times to same functions and with insufficient msg.value . 
 first call will use all the msg.value and complete the execution just we have to check that 
@@ -34,7 +34,7 @@ Inside _withdraw() function msg.value is :
 result of delegatecall
 false
 ```
-##Breackdown the Output
+#Breackdown the Output
 1)first it does delegate-call to withdraw() function which internally calls _withdraw(). Inside _withdraw() first it prints value of msg.value = 1000000000000000000
 2) Next it does an external call to sendFrom() inside _withdrawToChain().  and sendFrom will receive all the ethers 
 3) Now it prints result of calling sendFrom.
@@ -45,6 +45,6 @@ false
 6) Now it does an external call to sendFrom() and fail because it doesn't have sufficient eth to do an external call and pass msg.value to sendFrom(). it only prints the result of delegate-call and doesn't print the result of sendFrom() because it failed.
    *** Another catch over here is that inside _withdraw() there is the same mechanism to set gas value as address(this).balance if msg.value < 0 which is able to bypass because the value of msg.value was persisted ***
 
-##Concution 
+#Concution 
 This shows that the mechanisum which sends gas from cintract balance if msg.value is less than 0 will fail if this two functions were called by usong burst() function 
 
