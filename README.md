@@ -8,7 +8,7 @@ Open Remix and put these 5 files in the same folder
         inputs: 1] address of MagnetarMarketModule
                  2] address of SendFrom.sol
 
-# Execution\ 
+# Execution
 Now deployment is done I have made this code according to senario of code inside Tapicaos contest
 here we will do a delegate-call two times to the same functions and with insufficient msg.value . 
 the first call will use all the msg.value and complete the execution just we have to check that 
