@@ -51,7 +51,7 @@ false
 6) Now it does an external call to sendFrom() and fail because it doesn't have sufficient eth to do an external call and pass msg.value to sendFrom(). it only prints the result of delegate-call and doesn't print the result of sendFrom() because it failed.
    ***Another catch over here is that inside _withdraw() there is a  mechanism to set gas value as address(this).balance if msg.value < 0 which is able to bypass because the value of msg.value was persisted***
 
-#Concution 
+# Concution 
 
 This shows that the mechanism which sends gas from contract balance if msg.value is less than 0 will fail if these two functions were called by using burst() function 
 
