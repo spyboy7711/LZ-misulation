@@ -14,6 +14,7 @@ here we will do a delegate-call two times to the same functions and with insuffi
 the first call will use all the msg.value and complete the execution just we have to check that 
 
 1)whether the msg.value stays persist inside delegate-call?
+
 2)after using that mag.value to do external calls inside delegat-call. second time does it all to do external call ?
 
 Execution steps: (We will see information related to transactions inside console.logs)
