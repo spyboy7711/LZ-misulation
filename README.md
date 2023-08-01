@@ -52,5 +52,6 @@ false
    ***Another catch over here is that inside _withdraw() there is the  mechanism to set gas value as address(this).balance if msg.value < 0 which is able to bypass because the value of msg.value was persisted***
 
 #Concution 
+
 This shows that the mechanisum which sends gas from cintract balance if msg.value is less than 0 will fail if this two functions were called by usong burst() function 
 
